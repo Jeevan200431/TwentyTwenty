@@ -49,7 +49,9 @@ TwentyTwenty
 │   ├── index.html  
 │   ├── portfolio.html    
 │   ├── script.js  
-│   └── style.css  
+│   └── style.css
+|--server/
+|   |-db.js
 ├── vercel.json  
 └── package.json  
 
