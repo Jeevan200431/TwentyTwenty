@@ -42,19 +42,16 @@ Deployment:
 ## Project Structure
   
 TwentyTwenty  
-├── client  
-│ ├── index.html  
-│ ├── portfolio.html  
-│ ├── style.css  
-│ └── script.js   
-├── server  
-│ ├── server.js  
-│ ├── models  
-│ │ └── User.js  
-│ └── routes  
-│ └── auth.js  
-├── package.json  
-└── README.md  
+├── api/  
+│   ├── register.js  
+│   └── login.js  
+├── public/  
+│   ├── index.html  
+│   ├── portfolio.html    
+│   ├── script.js  
+│   └── style.css  
+├── vercel.json  
+└── package.json  
 
 
 ---
@@ -96,7 +93,6 @@ git clone https://github.com/Jeevan200431/TwentyTwenty.git
 npm install
 
 3. Start the backend server:
-   node server/server.js
 
 
 5. Open `client/index.html` in a browser to use the application.
