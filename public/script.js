@@ -35,17 +35,3 @@ function login() {
       }
     });
 }
-
-function logout() {
-  localStorage.clear();
-  window.location.href = "/index.html";
-}
-
-if (window.location.pathname.includes("portfolio")) {
-  if (!localStorage.getItem("token")) {
-    window.location.href = "/index.html";
-  } else {
-    document.getElementById("userEmail").innerText =
-      "Logged in as: " + localStorage.getItem("email");
-  }
-}
