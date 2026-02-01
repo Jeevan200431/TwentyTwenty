@@ -2,11 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-const authRoutes = require("../server/routes/auth");
-
 const app = express();
 
-// Enhanced CORS configuration for Vercel
 app.use(cors({
   origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -15,7 +12,7 @@ app.use(cors({
 
 app.use(express.json());
 
-// MongoDB connection with better error handling
+// MongoDB connection
 let isConnected = false;
 
 const connectDB = async () => {
@@ -38,26 +35,6 @@ const connectDB = async () => {
   }
 };
 
-// Connect to database
 connectDB();
-
-// Use auth routes
-app.use(authRoutes);
-
-// Health check endpoint
-app.get("/api/health", (req, res) => {
-  res.json({ status: "ok", message: "API is running" });
-});
-
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({ message: "Route not found" });
-});
-
-// Error handler
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ message: "Something went wrong!" });
-});
 
 module.exports = app;
