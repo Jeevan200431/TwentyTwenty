@@ -5,8 +5,8 @@ const User = require("../models/User");
 
 const router = express.Router();
 
-// REGISTER
-router.post("/register", async (req, res) => {
+// REGISTER - with /api prefix
+router.post("/api/register", async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -25,12 +25,13 @@ router.post("/register", async (req, res) => {
     await user.save();
     res.json({ message: "Registration successful" });
   } catch (err) {
+    console.error("Register error:", err);
     res.status(500).json({ message: "Server error" });
   }
 });
 
-// LOGIN
-router.post("/login", async (req, res) => {
+// LOGIN - with /api prefix
+router.post("/api/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -48,6 +49,7 @@ router.post("/login", async (req, res) => {
 
     res.json({ message: "Login successful", token, email: user.email });
   } catch (err) {
+    console.error("Login error:", err);
     res.status(500).json({ message: "Server error" });
   }
 });

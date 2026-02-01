@@ -5,13 +5,16 @@ function register() {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      email: regEmail.value,
-      password: regPassword.value
+      email: document.getElementById("regEmail").value,
+      password: document.getElementById("regPassword").value
     })
   })
   .then(res => res.json())
   .then(data => {
-    message.innerText = data.message;
+    document.getElementById("message").innerText = data.message;
+  })
+  .catch(err => {
+    document.getElementById("message").innerText = "Error: " + err.message;
   });
 }
 
@@ -20,8 +23,8 @@ function login() {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      email: loginEmail.value,
-      password: loginPassword.value
+      email: document.getElementById("loginEmail").value,
+      password: document.getElementById("loginPassword").value
     })
   })
   .then(res => res.json())
@@ -31,8 +34,11 @@ function login() {
       localStorage.setItem("email", data.email);
       window.location.href = "/portfolio.html";   
     } else {
-      message.innerText = data.message;
+      document.getElementById("message").innerText = data.message;
     }
+  })
+  .catch(err => {
+    document.getElementById("message").innerText = "Error: " + err.message;
   });
 }
 
