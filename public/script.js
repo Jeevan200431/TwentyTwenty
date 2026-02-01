@@ -31,7 +31,8 @@ function login() {
         localStorage.setItem("email", data.email);
         window.location.href = "/portfolio.html";
       } else {
-        message.innerText = data.message;
+        document.getElementById("userEmail").innerText =
+      "Logged in as: " + localStorage.getItem("email");
       }
     });
 }
