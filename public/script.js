@@ -10,7 +10,9 @@ function register() {
     })
   })
   .then(res => res.json())
-  .then(data => message.innerText = data.message);
+  .then(data => {
+    message.innerText = data.message;
+  });
 }
 
 function login() {
@@ -27,7 +29,7 @@ function login() {
     if (data.token) {
       localStorage.setItem("token", data.token);
       localStorage.setItem("email", data.email);
-      window.location.href = "portfolio.html";
+      window.location.href = "/portfolio.html";   
     } else {
       message.innerText = data.message;
     }
@@ -36,12 +38,12 @@ function login() {
 
 function logout() {
   localStorage.clear();
-  window.location.href = "index.html";
+  window.location.href = "/index.html";            
 }
 
 if (window.location.pathname.includes("portfolio")) {
   if (!localStorage.getItem("token")) {
-    window.location.href = "index.html";
+    window.location.href = "/index.html";          
   } else {
     document.getElementById("userEmail").innerText =
       "Logged in as: " + localStorage.getItem("email");
