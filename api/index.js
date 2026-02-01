@@ -15,5 +15,7 @@ mongoose.connect(
 
 app.use("/api", authRoutes);
 
-// THIS IS CRITICAL
-module.exports = app;
+// THIS IS THE KEY LINE
+module.exports = (req, res) => {
+  app(req, res);
+};
