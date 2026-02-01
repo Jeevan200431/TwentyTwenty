@@ -9,11 +9,20 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(
-  "mongodb+srv://jeevan072004_db_user:JeeVan@twentytwenty.tke5mfs.mongodb.net/twentytwenty?retryWrites=true&w=majority"
-)
-.then(() => console.log("MongoDB connected"))
-.catch(err => console.log(err));
+let isConnected = false;
+
+async function connectDB() {
+  if (isConnected) return;
+  await mongoose.connect(
+    "mongodb+srv://jeevan072004_db_user:JeeVan@twentytwenty.tke5mfs.mongodb.net/twentytwenty?retryWrites=true&w=majority"
+  );
+  isConnected = true;
+}
+
+app.use(async (req, res, next) => {
+  await connectDB();
+  next();
+});
 
 app.use("/api", authRoutes);
 
