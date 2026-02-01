@@ -1,70 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio - TwentyTwenty</title>
+  <title>Portfolio</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div class="portfolio-container">
-    <header class="portfolio-header">
-      <h1>My Portfolio</h1>
-      <button onclick="logout()" class="logout-btn">Logout</button>
-    </header>
 
-    <div class="user-info">
-      <h2 id="userName">Loading...</h2>
-      <p id="userEmail">Loading...</p>
-    </div>
+  <h1>My Portfolio</h1>
+  <p id="userEmail"></p>
 
-    <div class="portfolio-content">
-      <!-- About Me Section -->
-      <section class="portfolio-section">
-        <h3>About Me</h3>
-        <p>
-          I am a passionate and motivated developer interested in building
-          simple, clean, and functional web applications. I enjoy learning
-          new technologies and improving my skills every day. I believe in
-          writing clean code and creating user-friendly interfaces.
-        </p>
-      </section>
+  <h2>About Me</h2>
+  <p>I am a passionate developer learning full-stack web development.</p>
 
-      <!-- Skills Section -->
-      <section class="portfolio-section">
-        <h3>Skills</h3>
-        <div class="skills-grid">
-          <div class="skill-item">HTML5 & CSS3</div>
-          <div class="skill-item">JavaScript (ES6+)</div>
-          <div class="skill-item">Node.js & Express</div>
-          <div class="skill-item">MongoDB</div>
-          <div class="skill-item">Git & GitHub</div>
-          <div class="skill-item">Responsive Design</div>
-          <div class="skill-item">RESTful APIs</div>
-          <div class="skill-item">Vercel Deployment</div>
-        </div>
-      </section>
+  <h2>Skills</h2>
+  <ul>
+    <li>HTML, CSS, JavaScript</li>
+    <li>Node.js, Express</li>
+    <li>MongoDB</li>
+  </ul>
 
-      <!-- Projects Section -->
-      <section class="portfolio-section">
-        <h3>Projects</h3>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h4>TwentyTwenty Portfolio App</h4>
-            <p>A full-stack web application with user authentication, built using Node.js, Express, and MongoDB. Deployed on Vercel.</p>
-          </div>
-          <div class="project-card">
-            <h4>Personal Website</h4>
-            <p>A responsive portfolio website showcasing my skills and projects using HTML, CSS, and JavaScript.</p>
-          </div>
-          <div class="project-card">
-            <h4>Task Management System</h4>
-            <p>A CRUD application for managing daily tasks with persistent storage using MongoDB.</p>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
+  <button onclick="logout()">Logout</button>
 
   <script src="/script.js"></script>
 </body>
