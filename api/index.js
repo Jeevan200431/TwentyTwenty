@@ -13,9 +13,7 @@ mongoose.connect(
   "mongodb+srv://jeevan072004_db_user:JeeVan@twentytwenty.tke5mfs.mongodb.net/twentytwenty?retryWrites=true&w=majority"
 );
 
-app.use("/api", authRoutes);
+// 🔥 CRITICAL FIX HERE
+app.use(authRoutes);
 
-// THIS IS THE KEY LINE
 module.exports = app;
-module.exports.default = app;
-
