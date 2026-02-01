@@ -109,7 +109,8 @@ npm install
 https://github.com/Jeevan200431/TwentyTwenty
 
 - Live Application (Vercel):
-(Add your Vercel deployment URL here)
+ https://twentytwenty1.vercel.app/
+- 
 
 ---
 
